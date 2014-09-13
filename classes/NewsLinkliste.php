@@ -25,7 +25,7 @@ class newslinklistClass extends \ContentElement
 			                          ->limit(1)
 			                          ->execute($newsid);
 			// Veröffentlichungsstatus ermitteln
-			if((!$objNews->start || $$objNews->start < time()) && (!$objNews->stop || $objNews->stop > time()) && $objNews->published) $published = true;
+			if((!$objNews->start || $objNews->start < time()) && (!$objNews->stop || $objNews->stop > time()) && $objNews->published) $published = true;
 			else $published = false;
 
 			if($objNews->numRows == 1 && $published)
