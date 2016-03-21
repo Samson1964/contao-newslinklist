@@ -66,11 +66,15 @@ class newslinklistClass extends \ContentElement
 			}
 		}
 
-		if($this->sortOrder == 'ascending')
-			array_multisort($newsunixtime,SORT_NUMERIC,SORT_ASC,$newsdate,$newsdatetime,$newslink,$newsheadline,$newssubheadline,$newsteaser);
-		else
-			array_multisort($newsunixtime,SORT_NUMERIC,SORT_DESC,$newsdate,$newsdatetime,$newslink,$newsheadline,$newssubheadline,$newsteaser);
-	
+		if(is_array($newslink))
+		{
+			// Linkliste sortieren, wenn es Einträge gibt
+			if($this->sortOrder == 'ascending')
+				array_multisort($newsunixtime,SORT_NUMERIC,SORT_ASC,$newsdate,$newsdatetime,$newslink,$newsheadline,$newssubheadline,$newsteaser);
+			else
+				array_multisort($newsunixtime,SORT_NUMERIC,SORT_DESC,$newsdate,$newsdatetime,$newslink,$newsheadline,$newssubheadline,$newsteaser);
+		}
+		
 		// Template und Variablen zuweisen und ausgeben
 		if(!$this->newslinklist_tpl) $this->newslinklist_tpl = $this->strTemplate;
 		$this->Template = new \FrontendTemplate($this->newslinklist_tpl);

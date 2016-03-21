@@ -2,6 +2,10 @@
 
 ## Version
 
+1.0.1 vom 21.03.2016
+
+- Fix: PHP-Warnung bei nichtvorhandener Linkliste
+
 1.0.0 vom 07.09.2014
 
 ## Verfügbare Templatevariablen
