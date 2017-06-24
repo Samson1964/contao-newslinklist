@@ -2,6 +2,10 @@
 
 ## Version
 
+1.0.2 vom 13.07.2016
+
+- Fix: Unwirksamen onsubmit_callback in fields von tl_content.php entfernt
+
 1.0.1 vom 21.03.2016
 
 - Fix: PHP-Warnung bei nichtvorhandener Linkliste

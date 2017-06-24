@@ -19,7 +19,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['newslinklist_stopdate'] = array
 	'inputType'            => 'text',
 	'eval'                 => array('rgxp'=>'date', 'datepicker'=>true, 'tl_class'=>'w50 clr wizard', 'submitOnChange'=>true),
 	'load_callback'        => array(array('tl_content_newslinklist', 'getStartstopinfo')),
-	'onsubmit_callback'    => array(array('tl_content_newslinklist', 'getStartstopinfo')),
 	'sql'                  => "varchar(10) NOT NULL default ''"
 );
 
@@ -42,7 +41,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['newslinklist'] = array
 	'label'                => &$GLOBALS['TL_LANG']['tl_content']['newslinklist'],
 	'exclude'              => true,
 	'options_callback'     => array('tl_content_newslinklist', 'getNewslinklist'),
-	'onsubmit_callback'    => array(array('tl_content_newslinklist', 'getNewslinklist')),
 	'inputType'            => 'checkboxWizard',
 	'eval'                 => array('mandatory'=>false, 'multiple'=>true, 'class'=>'clr'),
 	'sql'                  => "blob NULL", 
@@ -115,7 +113,7 @@ class tl_content_newslinklist extends Backend
 		while($objNews->next())
 		{
 			// Veröffentlichungsstatus ermitteln
-			if((!$objNews->start || $$objNews->start < time()) && (!$objNews->stop || $objNews->stop > time()) && $objNews->published) $published = true;
+			if((!$objNews->start || $objNews->start < time()) && (!$objNews->stop || $objNews->stop > time()) && $objNews->published) $published = true;
 			else $published = false;
 			
 			if($NewsArchiv[$objNews->pid])
