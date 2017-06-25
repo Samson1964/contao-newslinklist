@@ -8,7 +8,7 @@
 	<?php 
 		for($x=0;$x<count($this->link);$x++)
 		{
-			echo '<li><b>'.$this->date[$x].'</b> <a href="'.$this->link[$x].'">'.$this->newsHeadline[$x].'</a></li>';
+			echo '<li><b><a href="'.$this->link[$x].'">'.$this->newsHeadline[$x].'</a></b></li>';
 		} 
 	?>
 	</ul>
