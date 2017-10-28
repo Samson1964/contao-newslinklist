@@ -60,8 +60,8 @@ class newslinklistClass extends \ContentElement
 							$newsunixtime[] = $objNews->date;
 							if($objNews->teaser != '')
 							{
-								$temp = \String::toHtml5($objNews->teaser);
-								$newsteaser[] = \String::encodeEmail($temp);
+								$temp = \StringUtil::toHtml5($objNews->teaser);
+								$newsteaser[] = \StringUtil::encodeEmail($temp);
 							} 
 							else $newsteaser[] = '';
 						}

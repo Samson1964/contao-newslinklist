@@ -1,17 +1,5 @@
 # Nachrichten-Linkliste
 
-## Version
-
-1.0.2 vom 13.07.2016
-
-- Fix: Unwirksamen onsubmit_callback in fields von tl_content.php entfernt
-
-1.0.1 vom 21.03.2016
-
-- Fix: PHP-Warnung bei nichtvorhandener Linkliste
-
-1.0.0 vom 07.09.2014
-
 ## Verfügbare Templatevariablen
 
 Folgende Arrays stehen zur Verfügung:
