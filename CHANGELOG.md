@@ -1,5 +1,9 @@
 # Nachrichten-Linkliste
 
+## Version 1.0.4 (2018-10-25)
+
+- Fix: Gespeicherte Datensätze gingen verloren, wenn der Zeitraum ungültig war
+
 ## Version 1.0.3 (2017-10-28)
 
 - Fix: Kompatibilität mit PHP 7.1 hergestellt - String -> StringUtil
