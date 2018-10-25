@@ -108,7 +108,22 @@ class tl_content_newslinklist extends Backend
 		$bis = $GLOBALS['NEWSLINKLIST']['stop'];
 		
 		$array = array();
-		if($von && $bis) $objNews = $this->Database->prepare("SELECT id, pid, headline, date, published, start, stop FROM tl_news WHERE date > ? AND date < ? ORDER BY date DESC")->execute($von, $bis);
+		if($von && $bis)
+		{
+			// Zeitraum vorgegeben, aber die bereits gespeicherten Einträge müssen auch enthalten sein!
+			// Gespeicherte Datensätze abrufen und in Abfrage einfügen
+			$gespeichert = unserialize($dc->activeRecord->newslinklist);
+			$oder = '';
+			if(is_array($gespeichert))
+			{
+				foreach($gespeichert as $item)
+				{
+					$oder .= ' OR id = '.$item;
+				}
+			}
+			// Datenbankabfrage vornehmen
+			$objNews = $this->Database->prepare("SELECT id, pid, headline, date, published, start, stop FROM tl_news WHERE (date > ? AND date < ?) ".$oder." ORDER BY date DESC")->execute($von, $bis);
+		}
 		else $objNews = $this->Database->prepare("SELECT id, pid, headline, date, published, start, stop FROM tl_news ORDER BY date DESC")->execute();
 		while($objNews->next())
 		{
