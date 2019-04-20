@@ -1,5 +1,8 @@
 # Nachrichten-Linkliste
 
+- Fix: tl_content.php 'class'=>'clr' nach 'tl_class'=>'long clr', sh. https://github.com/contao/core/issues/8584
+- Fix: Hilfetext Sortierreihenfolge geändert
+
 ## Version 1.0.4 (2018-10-25)
 
 - Fix: Gespeicherte Datensätze gingen verloren, wenn der Zeitraum ungültig war

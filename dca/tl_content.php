@@ -35,6 +35,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['newslinklist_tpl'] = array
 ); 
 
 // Nachrichtenliste anzeigen
+// Fix 'class'=>'clr' nach 'tl_class'=>'long clr', sh. https://github.com/contao/core/issues/8584
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['newslinklist'] = array
 (
@@ -42,7 +43,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['newslinklist'] = array
 	'exclude'              => true,
 	'options_callback'     => array('tl_content_newslinklist', 'getNewslinklist'),
 	'inputType'            => 'checkboxWizard',
-	'eval'                 => array('mandatory'=>false, 'multiple'=>true, 'class'=>'clr'),
+	'eval'                 => array('mandatory'=>false, 'multiple'=>true, 'tl_class'=>'clr long'),
 	'sql'                  => "blob NULL", 
 );
 
