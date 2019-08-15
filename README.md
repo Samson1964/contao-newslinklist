@@ -2,8 +2,6 @@
 
 ## Verfügbare Templatevariablen
 
-Folgende Arrays stehen zur Verfügung:
-
 $this->link = Link zur Nachricht  
 $this->date = Datum der Nachricht ohne Uhrzeit im global eingestellten Format  
 $this->datetime = Datum der Nachricht mit Uhrzeit im global eingestellten Format  
