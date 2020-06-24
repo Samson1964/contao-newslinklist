@@ -1,5 +1,7 @@
 # Nachrichten-Linkliste
 
+## Version 1.0.5 (2019-04-20)
+
 - Fix: tl_content.php 'class'=>'clr' nach 'tl_class'=>'long clr', sh. https://github.com/contao/core/issues/8584
 - Fix: Hilfetext Sortierreihenfolge geändert
 
